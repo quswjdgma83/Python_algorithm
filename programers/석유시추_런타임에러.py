@@ -1,25 +1,6 @@
 import sys
 sys.setrecursionlimit(10000)
 
-# def check_oil(land, x, y):
-#     count = 0
-#     new_count = 0
-#     x_list = []
-#     new_x_list = []
-#     if x < 0 or x >= len(land) or y < 0 or y >= len(land[0]) or land[x][y] == 0:
-#         return 0, []
-#     if land[x][y] != 0:
-#         count += land[x][y]
-#         land[x][y] = 0
-#         x_list.append(x)
-#     new_count, new_x_list = check_oil(land, x-1, y)
-#     new_count, new_x_list = check_oil(land, x+1, y)
-#     new_count, new_x_list = check_oil(land, x, y-1)
-#     new_count, new_x_list = check_oil(land, x, y+1)
-#     count += new_count
-#     x_list.extend(new_x_list)
-#     return count, x_list
-
 def check_oil(land, x, y):
     count = 0
     y_list = []
@@ -41,7 +22,6 @@ def check_oil(land, x, y):
 
 
 def solution(land):
-    answer = 0
     oil_dict = {}
     for i in range(len(land)):
         for j in range(len(land[0])):
@@ -53,9 +33,7 @@ def solution(land):
                         oil_dict[y] = 0
                     oil_dict[y] += oil
     a = max(oil_dict.values())
-        
-    print(a)
-    return answer
+    return a
 
 solution(
     [
