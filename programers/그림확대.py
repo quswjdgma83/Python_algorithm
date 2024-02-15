@@ -1,8 +1,8 @@
-def copy_garo(arr):
+def copy_garo(arr, k):
     bump = []
     for i in range(len(arr)):
-        bump.append(arr[i])
-        bump.append(arr[i])
+        for _ in range(k):
+            bump.append(arr[i])
     return bump
 
 def solution(picture, k):
@@ -10,11 +10,10 @@ def solution(picture, k):
     picture = [list(pic) for pic in picture]
     y_len = len(picture[0]) #가로길이
     x_len = len(picture) #세로길이
-    # answer = [[0 for _ in range(y_len*2)] for _ in range(x_len*2)]
     for i in range(len(picture)):
-        a = copy_garo(picture[i])
-        k = "".join(a)
-        answer.append(k)
-        answer.append(k)
+        a = copy_garo(picture[i], k)
+        t = "".join(a)
+        for _ in range(k):
+            answer.append(t)
 
     return answer
