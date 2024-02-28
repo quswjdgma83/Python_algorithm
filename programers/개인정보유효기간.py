@@ -21,7 +21,7 @@ def makeDay(privacies, today):
             day, key = privacy.split(" ")
             print("오늘",today,todayCalc(today))
             print("개정일", privacy,calcDetailDay(day, realResult[key]))
-            if todayCalc(today)-1 > calcDetailDay(day, realResult[key]):
+            if todayCalc(today) > calcDetailDay(day, realResult[key]):
                  result.append(count)
 
         return result

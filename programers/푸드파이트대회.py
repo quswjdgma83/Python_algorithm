@@ -12,10 +12,8 @@ def solution(food):
     bump2 = list(reversed(bump))
     bump.append("0")
     bump = "".join(bump)
-    print(bump)
     bump2 = "".join(bump2)
     answer = bump + bump2
-    print(answer)
     return answer
 
 solution([1, 3, 4, 6])
