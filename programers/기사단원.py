@@ -6,10 +6,10 @@ from math import sqrt
 
 def yaksu(number):
     count = 0
-    for i in range(1, int(sqrt(number)) + 1):
+    for i in range(1, int(sqrt(number) + 1)):
         if number % i == 0:
             count += 1
-            if i != number // i:  # 제곱근이 아니면, 짝이 되는 약수도 존재
+            if number != i**2:
                 count += 1
     return count
 
