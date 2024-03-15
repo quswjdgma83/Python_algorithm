@@ -1,4 +1,4 @@
-def solution(id_list, report, k):
+def solution(id_list____, report, k):
     report = set(report)
     r_dict = {}
     k_dict = {}
@@ -6,7 +6,7 @@ def solution(id_list, report, k):
         user, attacked = goal.split(" ")
         r_dict[user] = attacked
     report_list = list(r_dict.values())
-    for id in id_list:
+    for id in id_list____:
         if report_list.count(id) >= k:
             k_dict[id] = True
         else:
