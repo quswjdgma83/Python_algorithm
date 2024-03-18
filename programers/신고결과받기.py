@@ -11,7 +11,7 @@ def solution(id_list____, report, k):
             k_dict[id] = True
         else:
             k_dict[id] = False
-        
+    
     result_dict = {}
     for user, attacked in r_dict.items():
         result_dict[user] = 0

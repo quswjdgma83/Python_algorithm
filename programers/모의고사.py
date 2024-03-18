@@ -15,6 +15,7 @@ def solution(answers):
         return [1, 2, 3]
     temp = max(c1, c2, c3)
     ans = [c1,c2,c3]
+    
     for idx, k in enumerate(ans):
         if k == temp:
             answer.append(idx+1)

@@ -1,19 +1,11 @@
 def solution(friends, gifts):
-    gifts_sent = {friend: 0 for friend in friends}
-    gifts_received = {friend: 0 for friend in friends}
-    next_month_gifts = {friend: 0 for friend in friends}
+    answer = 0
+    #경우의수: 1. 선물을 주고받은 기록 2. 선물지수: 준선물수 - 받은선물수
+    #gifts[0] 선물을 준 친구
+    #gifts[1] 선물을 받은 친구
+    gift_out = {}
+    gift_in = {}
+    for o, i in gifts:
+        gift_out[]
 
-    for gift in gifts:
-        giver, receiver = gift.split()
-        gifts_sent[giver] += 1
-        gifts_received[receiver] += 1
-
-    for giver, receiver in gifts:
-        balance_giver = gifts_sent[giver] - gifts_received[giver]
-        balance_receiver = gifts_sent[receiver] - gifts_received[receiver]
-        if balance_giver > balance_receiver:
-            next_month_gifts[receiver] += 1
-        elif balance_giver < balance_receiver:
-            next_month_gifts[giver] += 1
-
-    return max(next_month_gifts.values())
+    return answer
