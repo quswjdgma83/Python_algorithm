@@ -1,15 +1,42 @@
-# 5 7 3
-# 0 2 4 4
-# 1 1 2 5
-# 4 0 6 2
-M, N, K = map(int,input().split(" "))
+# BFS
 
-target = [[0]*N for _ in range(M)]
+from collections import deque
 
-for _ in range(K):
-    j1,i1,j2,i2 = map(int,input().split(" "))
-    for i in range(i1,i2):
-        for j in range(j1,j2):
-            target[i][j] = 1
-for i in range(M):
-    print(target[i])
+m, n, k = map(int, input().split())
+graph = [[0] * n for _ in range(m)]
+for _ in range(k):
+    x1, y1, x2, y2 = map(int, input().split())
+    for i in range(x1, x2):
+        for j in range(m - y1 - 1, m - y2 - 1, -1):
+            graph[j][i] = 1
+
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+def bfs(x, y):
+    global answer
+    queue = deque()
+    queue.append((x, y))
+    graph[x][y] = 1
+    size = 1
+    while queue:
+        x, y = queue.popleft()
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if 0 <= nx < m and 0 <= ny < n and graph[nx][ny] == 0:
+                graph[nx][ny] = 1
+                queue.append((nx, ny))
+                size += 1
+    result.append(size)
+
+result = []
+for i in range(m):
+    for j in range(n):
+        if graph[i][j] == 0:
+            bfs(i, j)
+            
+result.sort()
+print(len(result))
+for i in result:
+    print(i, end=' ')
