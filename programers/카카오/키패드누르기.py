@@ -13,16 +13,16 @@ def compare(num, L, R, hand):
     Rind = keypad[R]
     
     Ldist = abs(Cind[0] - Lind[0]) + abs(Cind[1] - Lind[1])
-    Rdist = abs(Cind[0] - Rind[0]) + abs(Cind[1] - Rind[1])
+    Rdist2 = abs(Cind[0] - Rind[0]) + abs(Cind[1] - Rind[1])
     
-    if Ldist == Rdist:
+    if Ldist == Rdist2:
         if hand == "left":
             LH = num
             return "L"
         else:
             RH = num
             return "R"
-    if Ldist < Rdist:
+    if Ldist < Rdist2:
         LH = num
         return "L"
     else:
