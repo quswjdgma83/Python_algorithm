@@ -7,3 +7,8 @@ sorted_order = sorted(order2, key=lambda x: count[x[0]])
 
 # 결과 출력
 print(sorted_order)
+
+count2 = [10, 5, 8, 3]
+order3 = [(1, 100, 3), (0, 50, 5), (2, 70, 2), (3, 90, 4)]
+
+sorted_order2 = sorted(order3, key=lambda x: count2[x[0]]) 
